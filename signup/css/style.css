@@ -1,0 +1,19 @@
+#signUp{
+    margin: auto;
+    border: 1px solid black;
+    width: 19em;
+    display: flex;
+    padding-left: 2em;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 2em;
+    /* align-items: flex-start; */
+    padding-top: 2em;
+    padding-bottom: 2em;
+    margin-top: 5em;
+}
+
+input{
+    border-radius: 0%;
+    border: 1px black solid;
+}
