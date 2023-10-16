@@ -1,0 +1,114 @@
+body{
+    padding: 50px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F5F5F5;
+  }
+  /*Sign In Form*/
+  .signin{
+  position: relative;
+  height: 700px;
+  width: 500px;
+  margin: auto;
+  margin-top: calc(5%);
+  box-shadow: 0px 30px 125px -5px #000;
+  border-radius:20px ;
+  -webkit-border-radius:20px ;
+  -moz-border-radius:20px ;
+  -ms-border-radius:20px ;
+  -o-border-radius:20px ;
+}
+  .wide-and-center{
+    margin: 2%;
+    padding: 4%;
+    margin-right: 100px;
+    margin-top: -50px;
+
+  }
+
+
+.submit-style {
+  align-items: center;
+  background-color: #fa6400;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  margin: 0;
+  min-height: 3rem;
+  padding: 12.00px;
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: baseline;
+  width: 70%;
+}
+.submit-style:hover,
+.submit-style:focus {
+  background-color: #fb8332;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.submit-style:hover {
+  transform: translateY(-1px);
+}
+
+.submit-style:active {
+  background-color: #c85000;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+.div-submit{
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+.forgot-pwd-style{
+  margin: 2%;
+  padding: 5%;
+  margin-top: -20px;
+}
+.keep-login-lab{
+  padding: 15px;
+  width: 100px;
+  display: inline-block;
+  
+}
+.input-style{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(176, 175, 175);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+font-family: 'Noto Sans', sans-serif;
+}
+.style-signIn{
+text-decoration: chartreuse;
+text-align: center;
+width: auto;
+margin: 1%;
+padding: 2%;
+}
+hr{
+  margin: 50px;
+  color: #000;
+  margin-top: 20px;
+}
+.span-login{
+  font-size: 20px;
+}
+.lable-style{
+  font-size: 1.1rem;
+
+}
