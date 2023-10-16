@@ -12,11 +12,11 @@ const createUser = (e) => {
     password.classList.remove('error');
     username.classList.remove('error');
     emailInput.classList.remove('error');
-    for (i = 0; i < errorMessage.length; i++){
+    for (i = 0; i < errorMessage.length; i++) {
         errorMessage[i].classList.remove('errorMessageTrue');
     }
     //remove all error class from all elements
-    
+
 
     if (e.target[2].value !== e.target[3].value || emailInput.value === '' || username.value.length < 6 || password.value < 6) {
         if (e.target[2].value !== e.target[3].value) {
@@ -31,7 +31,7 @@ const createUser = (e) => {
             username.classList.add("error");
             errorMessage[0].classList.add("errorMessageTrue");
         }
-        if (password.value.length < 5){
+        if (password.value.length < 5) {
             password.classList.add("error");
             errorMessage[2].classList.add("errorMessageTrue");
         }
@@ -48,6 +48,12 @@ const createUser = (e) => {
     localStorage.setItem('usersArray', JSON.stringify(usersArray));
     console.log(errorMessage[0].classList);
     //assd the user inputs as an object in the arry in the local storage
+    const currentUser = localStorage.setItem('currentUser', JSON.stringify({
+        userName: e.target[0].value,
+        email: e.target[1].value,
+        password: e.target[2].value
+    }))
+    //store current user info in local storage
 }
 
 const signUpForm = document.getElementById("signUp");
