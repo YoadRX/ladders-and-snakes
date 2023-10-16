@@ -1,12 +1,15 @@
 const email = document.querySelectorAll(".email");
 let submit = document.querySelector(".submit2");
-let checkBox = document.querySelector(".chk-box");
-const users = localStorage.getItem("usersArray")
-let usersArray = JSON.parse(users);
-const currentUser = localStorage.getItem("currentUser")
-let currentUserArray = JSON.parse(currentUser);
+var checkbox = document.querySelector("input[name=checkbox]");
+// const users = localStorage.getItem("usersArray")
+// let usersArray = JSON.parse(users);
+// const currentUser = localStorage.getItem("currentUser");
+// console.log('currentUser :', currentUser);
+var checkIfkeepIn=[{}]
 
-console.log(usersArray);
+
+
+
 function verifyPassword() {
     var pw = document.getElementById("pswd").value;
    //minimum password length validation and password
@@ -19,9 +22,11 @@ function verifyPassword() {
     }
   }
   submit.addEventListener("click", function(){    
-    console.log();
-  
-      if(checkBox.checked == true){
-          // console.log("hey there");
-        } 
+    checkbox.addEventListener('change', function() {
+      if (this.checked) {
+      checkIfkeepIn = {checkIfkeepIn: this.checked};
+      } else {
+      }
+    });
   });
+
