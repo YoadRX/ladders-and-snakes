@@ -1,4 +1,4 @@
-#signUp{
+#signUp {
     margin: auto;
     border: 1px solid black;
     width: 19em;
@@ -13,22 +13,33 @@
     margin-top: 5em;
 }
 
-input{
+input {
     border-radius: 0%;
     border: 1px black solid;
 }
-.errorMessageFalse{
+
+.errorMessageFalse {
     margin: 0;
-    color: transparent;
     font-size: small;
+    visibility: hidden;
 }
 
 .error {
     border: 1px solid red;
 }
+
 .errorMessageTrue {
+    visibility: visible;
     display: block;
     color: red;
     margin: 0;
     font-size: small;
+}
+
+#submitSignUp:hover {
+    filter: brightness(90%)
+}
+
+#submitSignUp:active {
+    filter: brightness(83%)
 }
