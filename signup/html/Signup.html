@@ -7,15 +7,17 @@
     <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
+    
     <form id="signUp">
+        <h2>Sign Up</h2>
         <label for="userName">Username:</label>
         <input type="text" id="Username" name="Username"><br><br>
         <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email"><br><br>
+        <input type="email" id="email" name="email"><p class="errorMessageFalse">Email adress must be given!</p><br>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password"><br><br>
         <label for="repeatPassword">Repeat Password:</label>
-        <input type="password" id="repeatPassword" name="repeatPassword"><br><br>
+        <input type="password" id="repeatPassword" name="repeatPassword"><p class="errorMessageFalse">Both passwords should be the same!</p><br>
         <input type="submit" id="submitSignUp" value="Submit">
       </form>
       <script src="../js/script.js"></script>

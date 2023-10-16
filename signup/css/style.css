@@ -17,3 +17,18 @@ input{
     border-radius: 0%;
     border: 1px black solid;
 }
+.errorMessageFalse{
+    margin: 0;
+    color: transparent;
+    font-size: small;
+}
+
+.error {
+    border: 1px solid red;
+}
+.errorMessageTrue {
+    display: block;
+    color: red;
+    margin: 0;
+    font-size: small;
+}
