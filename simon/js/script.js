@@ -2,7 +2,8 @@ const display = document.getElementById("display");
 const counter = document.querySelector(".Score");
 const padCursor = document.querySelectorAll(".pad");
 const simon = document.getElementById("simon");
-
+// var fileUrl = "http://127.0.0.1:5500/simon/" + "audio/one.mp3";
+// var audio = new Audio(fileUrl);
 let arrayMemory = [];
 let userInputArray = [];
 let scoreCounter = 0;
@@ -15,9 +16,15 @@ let level = 1;
 
 // function to generate random color
 const colors = ["red", "yellow", "blue", "green"];
+const audios = ["one", "two", "three", "four"];
 const generateRandomColor = () => {
   const randomIndex = Math.floor(Math.random() * 4);
   return colors[randomIndex];
+};
+
+const generateAudioSound = () => {
+  const randomIndex = Math.floor(Math.random() * 4);
+  return audios[randomIndex];
 };
 
 resetGame();
@@ -34,6 +41,7 @@ function onSuccess() {
   userInputArray = [];
   scoreCounter++;
   level++;
+
   counter.innerText = "Your Score : " + scoreCounter;
   setTimeout(() => {
     simon.classList.remove("success");
@@ -53,7 +61,14 @@ function lightPreviousPads(functionToCallWhenFinished) {
     } else {
       const currentColor = arrayMemory[i];
       const currentPad = document.getElementById(currentColor);
+      const rndAudio = generateAudioSound();
+      var fileUrl2 = "http://127.0.0.1:5500/simon/" + "audio/"+rndAudio+".mp3";
+      var audio = new Audio(fileUrl2);
+      audio.play();
       currentPad.classList.add("light");
+     
+
+
       setTimeout(() => {
         // after 1 second we turn off the light of the pad
         currentPad.classList.remove("light");
@@ -75,6 +90,11 @@ function putrndColor() {
   disablePads();
   lightPreviousPads(() => {
     const rndColor = generateRandomColor();
+    const rndAudio = generateAudioSound();
+    var fileUrl2 = "http://127.0.0.1:5500/simon/" + "audio/"+rndAudio+".mp3";
+    var audio = new Audio(fileUrl2);
+    audio.play();
+
     arrayMemory.push(rndColor);
     const currentPad = document.getElementById(rndColor);
     currentPad.classList.add("light");
@@ -82,6 +102,7 @@ function putrndColor() {
       currentPad.classList.remove("light");
       setTimeout(() => {
         enablePads();
+        
       }, 500);
     }, 1000);
   });
@@ -92,6 +113,7 @@ function enablePads() {
     padCursor[i].classList.remove("light");
     padCursor[i].classList.add("pointer", "active");
     padCursor[i].addEventListener("click", handleClickPad);
+    
   }
 }
 
@@ -108,7 +130,10 @@ function handleClickPad(e) {
   console.log("touched!", e.target.id);
   
   userInputArray.push(e.target.id);
-
+  const rndAudio = generateAudioSound();
+  var fileUrl2 = "http://127.0.0.1:5500/simon/" + "audio/"+rndAudio+".mp3";
+  var audio = new Audio(fileUrl2);
+  audio.play();
   // [red, red, blue, red] arraymemory
   // [red, red, blue, red] 
   const currentPosition = userInputArray.length -1 ; // 2
