@@ -9,23 +9,38 @@
 </head>
 
 <body>
+    <div class="signup-div">
 
     <form id="signUp">
-        <h2>Sign Up</h2>
+        <div class="text-signIn">
+            <h1 class="style-signIn">Sign Up</h1>
+           <hr>
+           </div>
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
-        <p class="errorMessageFalse">Username must be atleast 5 characters long</p><br>
+        <input class="input-style" type="text" id="username" name="username">
+        <p class="errorMessageFalse">Username must be at least 5 characters long</p><br>
         <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email">
+        <input class="input-style" type="email" id="email" name="email">
         <p class="errorMessageFalse">Email adress must be given!</p><br>
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
+        <input class="input-style" type="password" id="password" name="password">
         <p class="errorMessageFalse">Password must be atleast 6 character long</p><br>
         <label for="repeatPassword">Repeat Password:</label>
-        <input type="password" id="repeatPassword" name="repeatPassword">
+        <input class="input-style" type="password" id="repeatPassword" name="repeatPassword">
         <p class="errorMessageFalse">Both passwords should be the same!</p><br>
-        <input type="submit" id="submitSignUp" value="Submit">
+        <div class="div-submit">
+            <!-- submit input  -->
+
+            <input class="submit-style submit2" type="submit" id="submitSignUp" value="Submit">
+
+          </div>
+
     </form>
+    <div class="signin">
+        <a href="../../SignIn/html/SignIn.html"><button class="submit-style submit2">Signin</button></a>
+       </div>
+</div>
+
     <script src="../js/script.js"></script>
 </body>
 
