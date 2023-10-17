@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.snakes{
+    position: absolute;
+    z-index: -1;
+    margin: auto;
+}
+
+.game-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+
+#green-snake{
+    /* top: 0;
+    left: 0; */
+    width: 654px;
+    height: 10 * 66;
+}
+#table2{
+    margin-left: 2px;
+    border: 0.00001px transparent;
+    margin: auto;
+}
+.players{
+    width: 43px;
+    height: 55px;
+    padding-top: 5px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+#player2 {
+    filter: sepia(100%)  ; 
+
+}
