@@ -7,6 +7,7 @@ const username = document.getElementById('username');
 
 
 const createUser = (e) => {
+console.log('✌️e --->', e);
     e.preventDefault()
     repeatPassword.classList.remove('error');
     password.classList.remove('error');
@@ -17,7 +18,7 @@ const createUser = (e) => {
     }
     //remove all error class from all elements
 
-    if (password.value !== repeatPassword.value || emailInput.value === '' || username.value.length < 6 || password.value < 6) {
+    if (password.value !== repeatPassword.value || emailInput.value === '' || username.value.length < 5 || password.value.length < 9) {
         if (password.value !== repeatPassword.value) {
             repeatPassword.classList.add("error");
             errorMessages[3].classList.add("errorMessageTrue");
@@ -30,7 +31,7 @@ const createUser = (e) => {
             username.classList.add("error");
             errorMessages[0].classList.add("errorMessageTrue");
         }
-        if (password.value.length < 6) {
+        if (password.value.length < 9) {
             password.classList.add("error");
             errorMessages[2].classList.add("errorMessageTrue");
         }
@@ -38,13 +39,23 @@ const createUser = (e) => {
     }
     //checks if the user inputs are valid, if not it adds error classes to the right elements
 
+
     let usersArray = JSON.parse(localStorage.getItem("usersArray"));
     if (!usersArray) { usersArray = [] }
+
+    for (let i = 0; i < usersArray.length; i++) {
+        if (usersArray[i].email === emailInput.value) {
+            alert("this email is already in use")
+            return false
+        }
+    }
+
     usersArray.push({
         userName: username.value,
         email: emailInput.value,
         password: password.value
     })
+
     localStorage.setItem('usersArray', JSON.stringify(usersArray));
     //assd the user inputs as an object in the arry in the local storage
     const currentUser = localStorage.setItem('currentUser', JSON.stringify({
@@ -53,6 +64,7 @@ const createUser = (e) => {
         password: password.value
     }))
     //store current user info in local storage
+    location.assign("/home/shani/project2/projectGame/mainPage/html/mainPage.html");
 }
 
 const signUpForm = document.getElementById("signUp");

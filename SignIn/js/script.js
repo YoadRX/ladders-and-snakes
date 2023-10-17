@@ -1,9 +1,15 @@
+const currentUserCheck = localStorage.getItem('currentUser');
+console.log('✌️currentUserCheck --->', currentUserCheck);
+
+if (currentUserCheck.length > 0){
+  location.assign("/home/shani/project2/projectGame/mainPage/html/mainPage.html");
+}
 const email = document.querySelectorAll(".email");
 let submit = document.querySelector(".submit2");
 let checkBox = document.querySelector(".chk-box");
 const users = localStorage.getItem("usersArray")
 let usersArray = JSON.parse(users);
-const currentUser = localStorage.getItem("currentUser")
+// const currentUser = localStorage.getItem("currentUser")
 let currentUserArray = JSON.parse(currentUser);
 
 console.log(usersArray);
@@ -25,3 +31,9 @@ function verifyPassword() {
           // console.log("hey there");
         } 
   });
+  console.log(email.item(0).value);
+  const currentUser = localStorage.setItem('currentUser', JSON.stringify({
+    userName: username.item(0).value,
+    email: email.item(0).value,
+    password: pw
+}))
