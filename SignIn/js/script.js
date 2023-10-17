@@ -6,13 +6,12 @@ if (currentUserCheck.length > 0){
 }
 const email = document.querySelectorAll(".email");
 let submit = document.querySelector(".submit2");
-<<<<<<< HEAD
 let checkBox = document.querySelector(".chk-box");
+
 const users = localStorage.getItem("usersArray")
 let usersArray = JSON.parse(users);
 // const currentUser = localStorage.getItem("currentUser")
 let currentUserArray = JSON.parse(currentUser);
-=======
 var checkbox = document.querySelector("input[name=checkbox]");
 // const users = localStorage.getItem("usersArray")
 // let usersArray = JSON.parse(users);
@@ -22,7 +21,6 @@ var checkIfkeepIn=[{}]
 
 
 
->>>>>>> e5ace90ad9e27466959f0b4440e2e5b45cf60925
 
 function verifyPassword() {
     var pw = document.getElementById("pswd").value;
@@ -43,13 +41,10 @@ function verifyPassword() {
       }
     });
   });
-<<<<<<< HEAD
   console.log(email.item(0).value);
   const currentUser = localStorage.setItem('currentUser', JSON.stringify({
     userName: username.item(0).value,
     email: email.item(0).value,
     password: pw
 }))
-=======
 
->>>>>>> e5ace90ad9e27466959f0b4440e2e5b45cf60925
