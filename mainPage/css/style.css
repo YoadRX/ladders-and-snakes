@@ -154,3 +154,10 @@ h3{
     font-family: 'Nunito', sans-serif;
     font-size: 1.5rem;
 }
+#simon{
+  transform: scale(90%);
+  -webkit-transform: scale(90%);
+  -moz-transform: scale(90%);
+  -ms-transform: scale(90%);
+  -o-transform: scale(90%);
+}
