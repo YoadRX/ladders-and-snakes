@@ -70,7 +70,7 @@ function moveThePlayer() {
             score++;
             highestScoreArray.push(score);
             localStorage.setItem("ScoreArrayForLNS", JSON.stringify(ScoreArray+highestScoreArray));
-            
+
             resetGame();
 
 
