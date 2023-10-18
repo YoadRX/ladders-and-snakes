@@ -118,17 +118,16 @@ function moveThePlayer() {
         }
         setTimeout(() => {
             currentTdOfThePlayer = document.getElementById("block" + positionPlayer);
-            if(playerIndex == 0){
-                currentTdOfThePlayer.appendChild(playersArr[playerIndex +1]);
-            }
-            if(playerIndex == 1){
-                currentTdOfThePlayer.appendChild(playersArr[playerIndex -1]);
-            }
+            currentTdOfThePlayer.appendChild(playersArr[playerIndex]);
+            if (playerIndex === 0) playerIndex = 1
+            else playerIndex = 0
         }, 500)
 
+    } else {
+        if (playerIndex === 0) playerIndex = 1
+        else playerIndex = 0
     }
-    if (playerIndex === 0) playerIndex = 1
-    else playerIndex = 0
+
 }
 moveBtn.addEventListener("click", moveThePlayer);
 
