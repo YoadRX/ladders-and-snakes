@@ -1,54 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Score</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans&family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans&family=Nunito&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../mainPage/css/mainStyle.css">
 </head>
+
 <body>
     <header>
         <div class="container-nav">
-            <a href="../../mainPage/html/mainPage.html"><div class="items homePage">Home</div></a>
-            <a href="../../"><div class="items profile">Profile</div></a>
-            <a href="../../score/html/score.html"><div class="items score">Score</div></a>
+            <a href="../../mainPage/html/mainPage.html">
+                <div class="items homePage">Home</div>
+            </a>
+            <a href="../../">
+                <div class="items profile">Profile</div>
+            </a>
+            <a href="../../score/html/score.html">
+                <div class="items score">Score</div>
+            </a>
             <div id="user-welcome" class="welcome-user-text">Welcome To {user}</div>
-            <a href="../../SignIn/html/SignIn.html"><div class="items signOut" id="sign-out">Sign Out</div></a>
+            <a href="../../SignIn/html/SignIn.html">
+                <div class="items signOut" id="sign-out">Sign Out</div>
+            </a>
         </div>
     </header>
 
-<main>
-    <div class="container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Game</th>
-                    <th>Time</th>
-                    <th>Your Highest Score</th>
-                </tr>
-            </thead>
-            <tbody class="tbody-games">
-                <tr>
-                    <td>ladders & sneaks</td>
-                    <td>1 hour</td>
-                    <td>20 Points</td>
+    <main>
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Game</th>
+                        <th>Time</th>
+                        <th>Your Highest Score</th>
+                        <th>No. Of Victories</th>
+                        <th>No. Of Losses</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody-games">
+                    <tr>
+                        <td>ladders & sneaks</td>
+                        <td>1 hour</td>
+                        <td></td>
+                        <td id="victory"></td>
+                        <td id="lose"></td>
 
-                </tr>
-                <tr>
+                    </tr>
+                    <tr>
 
 
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</main>
-    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
 </body>
 <script src="../js/script.js"></script>
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../../mainPage/css/mainStyle.css">
+
 <script src="../../mainPage/js/mainNav.js"></script>
 
 </html>
