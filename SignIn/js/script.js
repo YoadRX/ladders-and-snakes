@@ -26,6 +26,7 @@ function verifyPassword(e) {
   for (i = 0; i < usersArray.length; i++) {
     if (email.value === usersArray[i].email) {
       if (usersArray[i].password === pw) {
+        localStorage.setItem('currentUser', JSON.stringify(usersArray[i]))
         location.assign("../../mainPage/html/mainPage.html");
         return;
       } else {
