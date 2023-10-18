@@ -14,7 +14,6 @@ for (let i = 0; i < r; i++) {
         td.style.height = "65.5px";
         td.style.width = "65px";
         td.style.backgroundColor = "transparent";
-
         counter2++;
     }
 }
@@ -104,7 +103,12 @@ function moveThePlayer() {
         }
         setTimeout(() => {
             currentTdOfThePlayer = document.getElementById("block" + positionPlayer);
-            currentTdOfThePlayer.appendChild(playersArr[playerIndex]);
+            if(playerIndex == 0){
+                currentTdOfThePlayer.appendChild(playersArr[playerIndex +1]);
+            }
+            if(playerIndex == 1){
+                currentTdOfThePlayer.appendChild(playersArr[playerIndex -1]);
+            }
         }, 500)
 
     }
