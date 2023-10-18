@@ -8,14 +8,14 @@ let usersIEM =[];
 let currentIEM =[];
 const ScoreArray = localStorage.getItem("ScoreArray");
 const usersArray = localStorage.getItem("usersArray");
-const currentUser = localStorage.getItem("currentUser");
+const currentUser3 = localStorage.getItem("currentUser");
 let arrayMemory = [];
 let userInputArray;
 let scoreCounter = 0;
 let level = 1;
 
 usersIEM = JSON.parse(usersArray);
-currentIEM = JSON.parse(currentUser).email;
+currentIEM = JSON.parse(currentUser3).email;
 
 
 
