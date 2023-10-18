@@ -3,12 +3,24 @@ const counter = document.querySelector(".Score");
 const padCursor = document.querySelectorAll(".pad");
 const simon = document.getElementById("simon");
 
-let highestScoreArray = [];
+let highestScoreArray = new Array();
+let usersIEM =[];
+let currentIEM =[];
 const ScoreArray = localStorage.getItem("ScoreArray");
+const usersArray = localStorage.getItem("usersArray");
+const currentUser = localStorage.getItem("currentUser");
 let arrayMemory = [];
-let userInputArray = [];
+let userInputArray;
 let scoreCounter = 0;
 let level = 1;
+
+usersIEM = JSON.parse(usersArray);
+currentIEM = JSON.parse(currentUser).email;
+
+
+
+
+
 
 // Whats timeout?
 // setTimeout(()=> console.log("AAA!!"), 1000)  --> this will call AAA! after 1 second
@@ -148,8 +160,26 @@ function handleClickPad(e) {
   
   if(userInputArray[currentPosition] !== arrayMemory[currentPosition]) {
     alert("you lost!");
-    highestScoreArray.push(level-1);
-    localStorage.setItem("ScoreArray", JSON.stringify(ScoreArray+highestScoreArray));
+
+      // for(let key in usersIEM){
+      //   if(usersIEM[key].email === currentIEM){
+      //     highestScoreArray.push(level-1);
+      //     highestScoreArray.push(usersIEM[key].score);
+      //     usersIEM[key].score =+ highestScoreArray;
+      //   }
+      // }
+    for(let key in usersIEM){
+      if(usersIEM[key].email === currentIEM){
+        if(usersIEM[key].score === undefined){
+          usersIEM[key].score = [];
+        }
+        usersIEM[key].score.push(level);
+
+        localStorage.setItem("usersArray", JSON.stringify(usersIEM));
+        console.log(usersIEM[key]);
+      }
+    }
+
     return resetGame();
   }
 
@@ -167,6 +197,8 @@ function resetGame() {
   scoreCounter = 0;
   arrayMemory = [];
   userInputArray = [];
+  highestScoreArray = [];
+  level = 0;
   display.addEventListener("click", PlaySimon);
   disablePads();
 }
