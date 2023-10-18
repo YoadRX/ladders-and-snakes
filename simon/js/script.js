@@ -3,6 +3,8 @@ const counter = document.querySelector(".Score");
 const padCursor = document.querySelectorAll(".pad");
 const simon = document.getElementById("simon");
 
+let highestScoreArray = [];
+const ScoreArray = localStorage.getItem("ScoreArray");
 let arrayMemory = [];
 let userInputArray = [];
 let scoreCounter = 0;
@@ -146,6 +148,8 @@ function handleClickPad(e) {
   
   if(userInputArray[currentPosition] !== arrayMemory[currentPosition]) {
     alert("you lost!");
+    highestScoreArray.push(level-1);
+    localStorage.setItem("ScoreArray", JSON.stringify(ScoreArray+highestScoreArray));
     return resetGame();
   }
 

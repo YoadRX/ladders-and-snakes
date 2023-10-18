@@ -40,3 +40,14 @@
     filter: sepia(100%)  ; 
 
 }
+.wide-and-center{
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+#move-btn{
+    width: 200px;
+    height: 100px;
+margin-top: -200px;
+}

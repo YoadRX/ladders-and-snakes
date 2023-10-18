@@ -2,6 +2,11 @@ let counter2 = 1;
 let table2 = document.getElementById("table2");
 table2.style.borderCollapse = "collapse";
 let r = 10;
+const ScoreArray = localStorage.getItem("ScoreArrayForLNS");
+let score = 0;
+let highestScoreArray = [];
+
+
 const specialBlocks = [2, 9, 15, 16, 18, 29, 50, 61, 72, 74, 96];
 for (let i = 0; i < r; i++) {
     let tr = document.createElement("tr");
@@ -17,6 +22,7 @@ for (let i = 0; i < r; i++) {
         counter2++;
     }
 }
+
 let tds = document.getElementsByClassName("blocks");
 for (j = 100; j > 0; j--) {
     const tens = Math.floor((j - 1) / 10);
@@ -60,7 +66,16 @@ function moveThePlayer() {
     positionPlayer = positionPlayer + getRundomNumber();
     if (positionPlayer > 100) {
         positionPlayer = 100;
+
+            score++;
+            highestScoreArray.push(score);
+            localStorage.setItem("ScoreArrayForLNS", JSON.stringify(ScoreArray+highestScoreArray));
+            
+            resetGame();
+
+
     }
+    
     currentTdOfThePlayer = document.getElementById("block" + positionPlayer);
     currentTdOfThePlayer.appendChild(playersArr[playerIndex]);
 
@@ -117,6 +132,12 @@ function moveThePlayer() {
 }
 moveBtn.addEventListener("click", moveThePlayer);
 
+
+function resetGame(){
+    counter2 = 1;
+
+
+}
 // function getId(id){
 
 // }
