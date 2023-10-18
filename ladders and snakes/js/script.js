@@ -105,11 +105,15 @@ function moveThePlayer() {
         setTimeout(() => {
             currentTdOfThePlayer = document.getElementById("block" + positionPlayer);
             currentTdOfThePlayer.appendChild(playersArr[playerIndex]);
+            if (playerIndex === 0) playerIndex = 1
+            else playerIndex = 0
         }, 500)
 
+    } else {
+        if (playerIndex === 0) playerIndex = 1
+        else playerIndex = 0
     }
-    if (playerIndex === 0) playerIndex = 1
-    else playerIndex = 0
+
 }
 moveBtn.addEventListener("click", moveThePlayer);
 

@@ -18,7 +18,7 @@ console.log('✌️e --->', e);
     }
     //remove all error class from all elements
 
-    if (password.value !== repeatPassword.value || emailInput.value === '' || username.value.length < 5 || password.value.length < 9) {
+    if (password.value !== repeatPassword.value || emailInput.value === '' || username.value.length < 5 || password.value.length < 6) {
         if (password.value !== repeatPassword.value) {
             repeatPassword.classList.add("error");
             errorMessages[3].classList.add("errorMessageTrue");
@@ -31,7 +31,7 @@ console.log('✌️e --->', e);
             username.classList.add("error");
             errorMessages[0].classList.add("errorMessageTrue");
         }
-        if (password.value.length < 9) {
+        if (password.value.length < 6) {
             password.classList.add("error");
             errorMessages[2].classList.add("errorMessageTrue");
         }
@@ -64,7 +64,7 @@ console.log('✌️e --->', e);
         password: password.value
     }))
     //store current user info in local storage
-    location.assign("/home/shani/project2/projectGame/mainPage/html/mainPage.html");
+    location.assign("../../mainPage/html/mainPage.html");
 }
 
 const signUpForm = document.getElementById("signUp");
