@@ -2,12 +2,10 @@ const display = document.getElementById("display");
 const counter = document.querySelector(".Score");
 const padCursor = document.querySelectorAll(".pad");
 const simon = document.getElementById("simon");
-// var fileUrl = "http://127.0.0.1:5500/simon/" + "audio/one.mp3";
-// var audio = new Audio(fileUrl);
+
 let arrayMemory = [];
 let userInputArray = [];
 let scoreCounter = 0;
-let eventCountClicks = 0;
 let level = 1;
 
 // Whats timeout?
@@ -17,17 +15,21 @@ let level = 1;
 // function to generate random color
 const colors = ["red", "yellow", "blue", "green"];
 const audios = ["one", "two", "three", "four"];
+// returns a random color inside colors
 const generateRandomColor = () => {
   const randomIndex = Math.floor(Math.random() * 4);
   return colors[randomIndex];
 };
+// returns a random audio inside audios
 
 const generateAudioSound = () => {
   const randomIndex = Math.floor(Math.random() * 4);
   return audios[randomIndex];
 };
-
+// does reset for the game to start with the default values and function
 resetGame();
+// function that starts the game and replace the name of display to be a none
+// and the background color to be a better color
 
 function PlaySimon() {
   display.innerText = "";
@@ -35,6 +37,9 @@ function PlaySimon() {
   setTimeout(() => putrndColor(), 2000);
 }
 
+
+// function that add and cont the score of the player and reset userInputArray 
+// for the user can 
 function onSuccess() {
   // make the simon circle light in green, and add to score + 1 and level +1 
   simon.classList.add('success');
@@ -50,7 +55,7 @@ function onSuccess() {
     }, 500);
   }, 1000);
 }
-
+// light the previous pads and then call the function for the next pads
 function lightPreviousPads(functionToCallWhenFinished) {
   let i = 0;
 
@@ -123,7 +128,8 @@ function disablePads() {
     padCursor[i].removeEventListener("click", handleClickPad);
   }
 }
-
+// checking if the player clicked the currect color with the sequence of all the array
+// then he will play the random audio sound
 function handleClickPad(e) {
   disablePads();
 
@@ -149,13 +155,12 @@ function handleClickPad(e) {
   }
   enablePads();
 }
-
+// reset to default
 function resetGame() {
   document.body.style.backgroundColor = "#666";
   display.innerText = "Play";
   counter.innerText = "Your Score : 0";
   scoreCounter = 0;
-  eventCountClicks = 0;
   arrayMemory = [];
   userInputArray = [];
   display.addEventListener("click", PlaySimon);
