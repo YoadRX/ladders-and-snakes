@@ -1,7 +1,7 @@
 const currentUserCheck = localStorage.getItem('currentUser')
 
-if (currentUserCheck.length > 0) {
-  location.assign("../mainPage/html/mainPage.html");
+if (currentUserCheck.length > 0){
+  location.assign("../../mainPage/html/mainPage.html");
 }
 const email = document.getElementById("email");
 let submit = document.querySelector(".submit2");
