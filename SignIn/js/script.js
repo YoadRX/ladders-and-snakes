@@ -1,6 +1,6 @@
 const currentUserCheck = localStorage.getItem('currentUser')
 
-if (currentUserCheck.length > 0){
+if (currentUserCheck){
   location.assign("../../mainPage/html/mainPage.html");
 }
 const email = document.getElementById("email");
