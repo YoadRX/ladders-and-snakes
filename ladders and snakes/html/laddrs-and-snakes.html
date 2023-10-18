@@ -8,30 +8,43 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans&family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans&family=Nunito&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <header>
         <div class="container-nav">
-            <a href="../../mainPage/html/mainPage.html"><div class="items homePage">Home</div></a>
-            <a href="../../"><div class="items profile">Profile</div></a>
-            <a href="../../score/html/score.html"><div class="items score">Score</div></a>
+            <a href="../../mainPage/html/mainPage.html">
+                <div class="items homePage">Home</div>
+            </a>
+            <a href="../../">
+                <div class="items profile">Profile</div>
+            </a>
+            <a href="../../score/html/score.html">
+                <div class="items score">Score</div>
+            </a>
             <div id="user-welcome" class="welcome-user-text">Welcome To {user}</div>
-            <a href="../../SignIn/html/SignIn.html"><div class="items signOut" id="sign-out">Sign Out</div></a>
+            <a href="../../SignIn/html/SignIn.html">
+                <div class="items signOut" id="sign-out">Sign Out</div>
+            </a>
         </div>
     </header>
+    <div id="container">
+        <div class="game-container">
+            <table id="table2"></table>
+            <img src="../img/snakes.png" class="snakes" id="green-snake">
+        </div>
+        <div class="wide-and-center">
 
-    <div class="game-container">
-        <table id="table2"></table>
-        <img src="../img/snakes.png" class="snakes" id="green-snake">
-    </div>
-    <div class="wide-and-center">
-        <button id="move-btn">click here</button>
-        <script src="../js/script.js"></script>
-    </div>
+            <button id="move-btn">Roll The Dice</button>
+            <div id="whos-turn">Red's Turn</div><br>
+            <video id="dice-video" autoplay muted>
+            </video>
 
-    
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
 </body>
 <link rel="stylesheet" href="../../mainPage/css/mainStyle.css">
 <script src="../../mainPage/js/mainNav.js"></script>
