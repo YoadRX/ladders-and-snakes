@@ -2,7 +2,7 @@ const currentUserCheck = localStorage.getItem('currentUser');
 console.log('✌️currentUserCheck --->', currentUserCheck);
 
 if (currentUserCheck.length > 0){
-  location.assign("../mainPage/html/mainPage.html");
+  location.assign("../../mainPage/html/mainPage.html");
 }
 const email = document.querySelector(".email");
 let submit = document.querySelector(".submit2");
