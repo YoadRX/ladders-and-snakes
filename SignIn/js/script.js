@@ -4,16 +4,9 @@ if (currentUserCheck){
   location.assign("../../mainPage/html/mainPage.html");
 }
 const email = document.getElementById("email");
-let submit = document.querySelector(".submit2");
-var checkbox = document.querySelector("input[name=checkbox]");
+const submit = document.querySelector(".submit2");
 const signInForm = document.getElementById("login-form")
 signInForm.onsubmit = verifyPassword
-// const users = localStorage.getItem("usersArray")
-// let usersArray = JSON.parse(users);
-// const currentUser = localStorage.getItem("currentUser");
-// console.log('currentUser :', currentUser);
-var checkIfkeepIn = [{}]
-
 
 
 
@@ -37,3 +30,5 @@ function verifyPassword(e) {
   }
   alert('we can\'t find you in our records, please sgin up first')
 }
+
+
