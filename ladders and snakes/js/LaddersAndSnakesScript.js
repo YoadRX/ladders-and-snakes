@@ -1,4 +1,3 @@
-let counter2 =  1;
 let table2 = document.getElementById("table2");
 table2.style.borderCollapse = "collapse";
 let r = 10;
@@ -15,7 +14,6 @@ for (let i = 0; i < r; i++) {
         td.style.height = "65.5px";
         td.style.width = "65px";
         td.style.backgroundColor = "transparent";
-        counter2++;
     }
 }
 
