@@ -1,18 +1,18 @@
-const display = document.getElementById("display");
+const display = document.getElementById("display"); 
 const counter = document.querySelector(".Score");
 const padCursor = document.querySelectorAll(".pad");
 const simon = document.getElementById("simon");
 
-let highestScoreArray = new Array();
-let usersIEM =[];
-let currentIEM =[];
-const ScoreArray = localStorage.getItem("ScoreArray");
-const usersArray = localStorage.getItem("usersArray");
-const currentUser3 = localStorage.getItem("currentUser");
-let arrayMemory = [];
-let userInputArray;
-let scoreCounter = 0;
-let level = 1;
+let highestScoreArray = new Array();// public array For the highest score
+let usersIEM =[]; // public array
+let currentIEM =[]; // public array
+const ScoreArray = localStorage.getItem("ScoreArray"); // local storage
+const usersArray = localStorage.getItem("usersArray"); // local storage
+const currentUser3 = localStorage.getItem("currentUser"); // local storage
+let arrayMemory = []; // public array
+let userInputArray; // public Input that the user press like the Correct color on the Simon
+let scoreCounter = 0; // for UpDate The Score for the User Visualization
+let level = 1; // level of the game (Like Score)
 
 usersIEM = JSON.parse(usersArray);
 currentIEM = JSON.parse(currentUser3).email;
@@ -81,7 +81,7 @@ function lightPreviousPads(functionToCallWhenFinished) {
       const currentColor = arrayMemory[i];
       const currentPad = document.getElementById(currentColor);
       const rndAudio = generateAudioSound();
-      var fileUrl2 = "http://127.0.0.1:5500/simon/" + "audio/"+rndAudio+".mp3";
+      var fileUrl2 = "../audio/"+rndAudio+".mp3";
       var audio = new Audio(fileUrl2);
       audio.play();
       currentPad.classList.add("light");
@@ -110,7 +110,7 @@ function putrndColor() {
   lightPreviousPads(() => {
     const rndColor = generateRandomColor();
     const rndAudio = generateAudioSound();
-    var fileUrl2 = "http://127.0.0.1:5500/simon/" + "audio/"+rndAudio+".mp3";
+    var fileUrl2 = "../audio/"+rndAudio+".mp3";
     var audio = new Audio(fileUrl2);
     audio.play();
 
@@ -142,7 +142,7 @@ function disablePads() {
     padCursor[i].removeEventListener("click", handleClickPad);
   }
 }
-// checking if the player clicked the currect color with the sequence of all the array
+// checking if the player clicked the current color with the sequence of all the array
 // then he will play the random audio sound
 function handleClickPad(e) {
   disablePads();
@@ -151,10 +151,10 @@ function handleClickPad(e) {
   
   userInputArray.push(e.target.id);
   const rndAudio = generateAudioSound();
-  var fileUrl2 = "http://127.0.0.1:5500/simon/" + "audio/"+rndAudio+".mp3";
+  var fileUrl2 = "../audio/"+rndAudio+".mp3";
   var audio = new Audio(fileUrl2);
   audio.play();
-  // [red, red, blue, red] arraymemory
+  // [red, red, blue, red] ArrayMemory
   // [red, red, blue, red] 
   const currentPosition = userInputArray.length -1 ; // 2
   
