@@ -86,8 +86,6 @@ function lightPreviousPads(functionToCallWhenFinished) {
       audio.play();
       currentPad.classList.add("light");
      
-
-
       setTimeout(() => {
         // after 1 second we turn off the light of the pad
         currentPad.classList.remove("light");
@@ -161,13 +159,6 @@ function handleClickPad(e) {
   if(userInputArray[currentPosition] !== arrayMemory[currentPosition]) {
     alert("you lost!");
 
-      // for(let key in usersIEM){
-      //   if(usersIEM[key].email === currentIEM){
-      //     highestScoreArray.push(level-1);
-      //     highestScoreArray.push(usersIEM[key].score);
-      //     usersIEM[key].score =+ highestScoreArray;
-      //   }
-      // }
     for(let key in usersIEM){
       if(usersIEM[key].email === currentIEM){
         if(usersIEM[key].score === undefined){

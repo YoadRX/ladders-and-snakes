@@ -9,7 +9,7 @@ const signInForm = document.getElementById("login-form")
 signInForm.onsubmit = verifyPassword
 
 
-
+// verify the email and the password that in usersArray
 function verifyPassword(e) {
   e.preventDefault()
   const usersArray = JSON.parse(localStorage.getItem('usersArray'));
