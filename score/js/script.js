@@ -9,6 +9,9 @@ const currentUser2 = localStorage.getItem("currentUser")
 console.log('currentUser :', currentUser2);
 usersIEM = JSON.parse(usersArray);
 currentIEM = JSON.parse(currentUser2).email;
+let createTable = document.querySelector(".tbody-Simon")
+
+
 
 for(key in usersIEM){
     if(usersIEM[key].email === currentIEM){
@@ -16,14 +19,18 @@ for(key in usersIEM){
         console.log(points);
     }
   }
-// Sort the numbers in descending order:
-const sortedPoints = points[key].sort();
-console.log('sortedPoints :', sortedPoints);
-const lastHighsetPoints = sortedPoints.pop();
+        // Sort the numbers in descending order:
+        if(points === 0 || points === null || points[key] === undefined ){
+          createTable.innerHTML += "<tr><td>Simon</td><td>2 hour</td><td>0 Points</td></tr>";
+        }
+        else{
+          console.log('points :', points);
+          const sortedPoints = points[key].sort();  
+        console.log('sortedPoints :', sortedPoints);
+        const lastHighsetPoints = sortedPoints.pop();
+        createTable.innerHTML += "<tr><td>Simon</td><td>2 hour</td><td>"+lastHighsetPoints+" Points</td></tr>";
+        }
 
-
-const createTable = document.querySelector(".tbody-Simon")
-createTable.innerHTML += "<tr><td>Simon</td><td>2 hour</td><td>"+lastHighsetPoints+" Points</td></tr>";
 
 
 const victory = document.getElementById("victory");
