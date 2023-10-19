@@ -87,17 +87,7 @@ body{
   justify-content: center;
   padding: 40px;
 }
-.forgot-pwd-style{
-  margin: 2%;
-  padding: 5%;
-  margin-top: -20px;
-}
-.keep-login-lab{
-  padding: 15px;
-  width: 100px;
-  display: inline-block;
-  
-}
+
 .input-style{
   width: 100%;
   padding: 12px 20px;
@@ -120,9 +110,6 @@ hr{
   margin: 50px;
   color: #000;
   margin-top: 20px;
-}
-.span-login{
-  font-size: 20px;
 }
 .lable-style{
   font-size: 1.1rem;
