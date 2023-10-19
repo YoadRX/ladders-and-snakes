@@ -20,7 +20,7 @@ for(key in usersIEM){
     }
   }
         // Sort the numbers in descending order:
-        if(points === 0 || points === null || points[key] === undefined ){
+        if(points === 0 || points === null || points[key] === undefined || points === undefined || points[key] === null){
           createTable.innerHTML += "<tr><td>Simon</td><td>2 hour</td><td>0 Points</td></tr>";
         }
         else{
