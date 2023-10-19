@@ -37,18 +37,3 @@ function verifyPassword(e) {
   }
   alert('we can\'t find you in our records, please sgin up first')
 }
-submit.addEventListener("click", function () {
-  checkbox.addEventListener('change', function () {
-    if (this.checked) {
-      checkIfkeepIn = { checkIfkeepIn: this.checked };
-    } else {
-    }
-  });
-});
-
-// console.log(email.item(0).value);
-// const currentUser = localStorage.setItem('currentUser', JSON.stringify({
-//   userName: username.item(0).value,
-//   email: email.item(0).value,
-//   password: pw
-// }))

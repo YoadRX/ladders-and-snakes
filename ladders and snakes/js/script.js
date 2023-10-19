@@ -2,15 +2,11 @@ let counter2 =  1;
 let table2 = document.getElementById("table2");
 table2.style.borderCollapse = "collapse";
 let r = 10;
-// const ScoreArray = localStorage.getItem("ScoreArrayForLNS");
-let score = 0;
-let highestScoreArray = [];
 
 
 const specialBlocks = [2, 9, 15, 16, 18, 29, 50, 61, 72, 74, 96];
 for (let i = 0; i < r; i++) {
     let tr = document.createElement("tr");
-    // tr.id = +i+1"tr";
     table2.appendChild(tr);
     for (let j = 0; j < r; j++) {
         let td = document.createElement("td");
@@ -98,14 +94,6 @@ function moveThePlayer() {
     positionPlayer = positionPlayer + getRundomNumber();
     if (positionPlayer > 100) {
         positionPlayer = 100;
-
-        score++;
-        highestScoreArray.push(score);
-        // localStorage.setItem("ScoreArrayForLNS", JSON.stringify(ScoreArray + highestScoreArray));
-
-        resetGame();
-
-
     }
 
     function changePlayerOnScreen() {
@@ -205,11 +193,5 @@ const endGame = () => {
     firstTd.appendChild(player1)
     firstTd.appendChild(player2)
     moveBtn.disabled = false
-}
-
-function resetGame() {
-    counter2 = 1;
-
-
 }
 
