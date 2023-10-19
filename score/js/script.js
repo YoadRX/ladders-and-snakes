@@ -17,13 +17,13 @@ for(key in usersIEM){
     }
   }
 // Sort the numbers in descending order:
-// const sortedPoints = points[key].sort();
-// console.log('sortedPoints :', sortedPoints);
-// const lastHighsetPoints = sortedPoints.pop();
+const sortedPoints = points[key].sort();
+console.log('sortedPoints :', sortedPoints);
+const lastHighsetPoints = sortedPoints.pop();
 
 
-// const createTable = document.querySelector(".tbody-games")
-// createTable.innerHTML += "<tr><td>Simon</td><td>2 hour</td><td>"+lastHighsetPoints+" Points</td></tr>";
+const createTable = document.querySelector(".tbody-Simon")
+createTable.innerHTML += "<tr><td>Simon</td><td>2 hour</td><td>"+lastHighsetPoints+" Points</td></tr>";
 
 
 const victory = document.getElementById("victory");
