@@ -53,7 +53,11 @@ console.log('✌️e --->', e);
     usersArray.push({
         userName: username.value,
         email: emailInput.value,
-        password: password.value
+        password: password.value,
+        snakesAndLaddersScore: {
+            victories: 0,
+            losses: 0
+        }
     })
 
     localStorage.setItem('usersArray', JSON.stringify(usersArray));
@@ -61,8 +65,13 @@ console.log('✌️e --->', e);
     const currentUser = localStorage.setItem('currentUser', JSON.stringify({
         userName: username.value,
         email: emailInput.value,
-        password: password.value
+        password: password.value,
+        snakesAndLaddersScore: {
+            victories: 0,
+            losses: 0
+        }
     }))
+
     //store current user info in local storage
     location.assign("../../mainPage/html/mainPage.html");
 }

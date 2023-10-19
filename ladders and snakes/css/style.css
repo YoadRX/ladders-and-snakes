@@ -38,7 +38,7 @@
     overflow: hidden;
 }
 
-#brown {
+#computer  {
     filter: sepia(100%);
 
 }
@@ -74,4 +74,12 @@
 #whos-turn {
     font-size: 30px;
     padding: 10px;
+}
+
+#conffeti{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 }

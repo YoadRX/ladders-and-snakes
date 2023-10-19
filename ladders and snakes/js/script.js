@@ -1,8 +1,8 @@
-let counter2 = 1;
+let counter2 =  1;
 let table2 = document.getElementById("table2");
 table2.style.borderCollapse = "collapse";
 let r = 10;
-const ScoreArray = localStorage.getItem("ScoreArrayForLNS");
+// const ScoreArray = localStorage.getItem("ScoreArrayForLNS");
 let score = 0;
 let highestScoreArray = [];
 
@@ -36,14 +36,14 @@ for (j = 100; j > 0; j--) {
 }
 const player1 = document.createElement("img");
 player1.className = "players";
-player1.id = "red";
+player1.id = "player";
 player1.src = "../img/solier.png";
 let currentTdOfThePlayer = document.getElementById("block1");
 currentTdOfThePlayer.appendChild(player1);
 
 const player2 = document.createElement("img");
 player2.className = "players";
-player2.id = "brown";
+player2.id = "computer";
 player2.src = "../img/solier.png";
 let currentTdOfThePlayer2 = document.getElementById("block1");
 currentTdOfThePlayer2.appendChild(player2);
@@ -54,6 +54,7 @@ const moveBtn = document.getElementById("move-btn");
 
 function getRundomNumber() {
     let randomNum = Math.floor(Math.random() * 6) + 1;
+    // let randomNum = 100
     const oldDiceSrc = document.getElementById('dice-src');
     const diceVideo = document.getElementById("dice-video")
     if (oldDiceSrc) oldDiceSrc.remove()
@@ -86,6 +87,8 @@ function getRundomNumber() {
     diceVideo.play()
     return randomNum;
 }
+
+
 const whosTurn = document.getElementById("whos-turn");
 function moveThePlayer() {
 
@@ -98,18 +101,18 @@ function moveThePlayer() {
 
         score++;
         highestScoreArray.push(score);
-        localStorage.setItem("ScoreArrayForLNS", JSON.stringify(ScoreArray + highestScoreArray));
+        // localStorage.setItem("ScoreArrayForLNS", JSON.stringify(ScoreArray + highestScoreArray));
 
         resetGame();
 
 
     }
 
-    function changePlayer(){
-        if (whosTurn.innerHTML === "Red's Turn") {
-            whosTurn.innerHTML = "Brown's Turn"
+    function changePlayerOnScreen() {
+        if (whosTurn.innerHTML === "Your Turn") {
+            whosTurn.innerHTML = "Computer Turn"
         } else {
-            whosTurn.innerHTML = "Red's Turn"
+            whosTurn.innerHTML = "Your Turn"
         }
     }
 
@@ -159,23 +162,19 @@ function moveThePlayer() {
                 currentTdOfThePlayer.appendChild(playersArr[playerIndex]);
                 if (playerIndex === 0) playerIndex = 1
                 else playerIndex = 0
-                changePlayer();
-                moveBtn.disabled = false
+                changePlayerOnScreen();
+                if (playerIndex === 1) setTimeout(moveThePlayer, 500)
+                else moveBtn.disabled = false
             }, 500)
         } else {
             if (positionPlayer === 100) {
-                setTimeout(() => {
-                    alert(playersArr[playerIndex].id + " won!")
-                    firstTd = document.getElementById("block1")
-                    firstTd.appendChild(player1)
-                    firstTd.appendChild(player2)
-                    moveBtn.disabled = false
-                }, 500)
+                setTimeout(endGame, 500)
             } else {
                 if (playerIndex === 0) playerIndex = 1
                 else playerIndex = 0
-                changePlayer();
-                moveBtn.disabled = false
+                changePlayerOnScreen();
+                if (playerIndex === 1) setTimeout(moveThePlayer, 500)
+                else moveBtn.disabled = false
             }
         }
     }, 1300)
@@ -184,20 +183,33 @@ function moveThePlayer() {
 moveBtn.addEventListener("click", moveThePlayer);
 
 
+const endGame = () => {
+    alert(playersArr[playerIndex].id === "player" ? "You've won!" : "You've lost")
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"))
+    const usersArray = JSON.parse(localStorage.getItem("usersArray"));
+    const index = usersArray.findIndex(i => i.email = currentUser.email);
+
+    if (playersArr[playerIndex].id === "player") {
+        confetti.start()
+        setTimeout(confetti.stop, 3000)
+        currentUser.snakesAndLaddersScore.victories++
+        usersArray[index].snakesAndLaddersScore.victories++;
+    } else {
+        currentUser.snakesAndLaddersScore.losses++
+        usersArray[index].snakesAndLaddersScore.losses++;
+    }
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    localStorage.setItem("usersArray", JSON.stringify(usersArray))
+
+    firstTd = document.getElementById("block1")
+    firstTd.appendChild(player1)
+    firstTd.appendChild(player2)
+    moveBtn.disabled = false
+}
+
 function resetGame() {
     counter2 = 1;
 
 
 }
-// function getId(id){
 
-// }
-
-// const id=getId(19)
-// const rowNumber=Math.floor((id-1)/10)
-// if(rowNumber%2!=0) {
-//     const left=rowNumber*10+1
-//     const right=(rowNumber+1)*10
-//     return left+right-1
-// }
-// else return id;
