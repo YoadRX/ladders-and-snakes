@@ -38,6 +38,13 @@ const lose = document.getElementById('lose');
 const currentUser3 = JSON.parse(currentUser2);
 victory.innerHTML = currentUser3.snakesAndLaddersScore.victories+ " times";
 lose.innerHTML= currentUser3.snakesAndLaddersScore.losses+" times"
+const numOfVic = currentUser3.snakesAndLaddersScore.victories;
+const numOfLos = currentUser3.snakesAndLaddersScore.losses;
+const sum = numOfLos + numOfVic;
+const percentageOfVic = (numOfVic/sum) * 100;
+console.log(percentageOfVic + "%");
+const victoryPercentage = document.getElementById('percentage');
+victoryPercentage.innerHTML = percentageOfVic + "%";
 
 
 
